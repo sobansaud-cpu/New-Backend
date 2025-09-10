@@ -134,6 +134,8 @@ class ImageChatRequest(BaseModel):
 def home():
     return {"message": "🚀 CodeFusion Backend is running"}
 
+from mangum import Mangum
+
  
 
 # main.py - Update the generate endpoint
@@ -1496,6 +1498,5 @@ async def chat_with_image(request: ImageChatRequest):
     except Exception as e:
         print(f"Image chat error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
-    
     
 handler = Mangum(app)
