@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+openai
+agents
+python-dotenv
+aiofiles
+requests
+httpx
+firebase-admin
+google-generativeai
+
+
