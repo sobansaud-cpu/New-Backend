@@ -24,7 +24,7 @@ from agents_core.chat_agent import generate_chat_response, generate_image_respon
 import firebase_admin
 from firebase_admin import credentials, firestore
 from firebase_admin.firestore import SERVER_TIMESTAMP
-from mangum import Mangum
+# from mangum import Mangum
 
 
 # Load environment variables from .env (for local dev)
@@ -62,6 +62,8 @@ except Exception as e:
 
 
 app = FastAPI()
+
+# from mangum import Mangum
 
 # Configure CORS
 # origins = [
@@ -134,7 +136,6 @@ class ImageChatRequest(BaseModel):
 def home():
     return {"message": "🚀 CodeFusion Backend is running"}
 
-from mangum import Mangum
 
  
 
@@ -1499,4 +1500,4 @@ async def chat_with_image(request: ImageChatRequest):
         print(f"Image chat error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
     
-handler = Mangum(app)
+# handler = Mangum(app)

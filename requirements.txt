@@ -5,7 +5,7 @@ openai
 agents
 python-dotenv
 aiofiles
-mangum
+# mangum
 requests
 httpx
 firebase-admin
