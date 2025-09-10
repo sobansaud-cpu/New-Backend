@@ -24,7 +24,7 @@ from agents_core.chat_agent import generate_chat_response, generate_image_respon
 import firebase_admin
 from firebase_admin import credentials, firestore
 from firebase_admin.firestore import SERVER_TIMESTAMP
-
+from mangum import Mangum
 
 
 # Load environment variables from .env (for local dev)
@@ -1496,3 +1496,6 @@ async def chat_with_image(request: ImageChatRequest):
     except Exception as e:
         print(f"Image chat error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+    
+    
+handler = Mangum(app)
