@@ -24,7 +24,6 @@ from agents_core.chat_agent import generate_chat_response, generate_image_respon
 import firebase_admin
 from firebase_admin import credentials, firestore
 from firebase_admin.firestore import SERVER_TIMESTAMP
-# from mangum import Mangum
 
 
 # Load environment variables from .env (for local dev)
@@ -63,27 +62,27 @@ except Exception as e:
 
 app = FastAPI()
 
-# from mangum import Mangum
+
 
 # Configure CORS
-# origins = [
-#     "https://a-nother.vercel.app",
-#     "http://127.0.0.1:3000",  
-#     "http://localhost:8000",
-#     "https://sandpack.codesandbox.io",
-#     "https://*.netlify.app"  
-# ]
-
 origins = [
-    # Production
-    "https://a-nother.vercel.app",                 # frontend (Vercel)
-    "https://another-back-production.up.railway.app",  # backend (Railway)
-
-    # Development / Local Testing
-    "http://127.0.0.1:3000",   # local frontend (Next.js)
-    "http://localhost:3000",   # local frontend
-    "http://localhost:8000",   # local backend
+    "https://a-nother.vercel.app",
+    "http://127.0.0.1:3000",  
+    "http://localhost:8000",
+    "https://sandpack.codesandbox.io",
+    "https://*.netlify.app"  
 ]
+
+# origins = [
+#     # Production
+#     "https://a-nother.vercel.app",                 # frontend (Vercel)
+#     "https://another-back-production.up.railway.app",  # backend (Railway)
+
+#     # Development / Local Testing
+#     "http://127.0.0.1:3000",   # local frontend (Next.js)
+#     "http://localhost:3000",   # local frontend
+#     "http://localhost:8000",   # local backend
+# ]
 
 app.add_middleware(
     CORSMiddleware,
