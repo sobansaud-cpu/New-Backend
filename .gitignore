@@ -51,8 +51,7 @@ Thumbs.db
 # Zip files
 *.zip
 
-# Netlify
-.netlify/
+
 
 # Misc
 *.bak
